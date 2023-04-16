@@ -1,39 +1,71 @@
 import java.io.*;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.StringTokenizer;
+import java.util.*;
 
-public class Main {
-
+public class Main {	
+	
+	static int day = 0;
+	static int[] dr = new int[] {1, -1, 0, 0};
+	static int[] dc = new int[] {0, 0, 1, -1};
+	static boolean[][] map;
+	static Queue<int[]> que;
+	static int m, n;
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int num = Integer.parseInt(br.readLine());
-		int count2 = 0;
-		int count5 = 0;
-		for (int i = 2 ; i <= num ; i++) {
-			count2 += getCount2(i);
-			count5 += getCount5(i);
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		m = Integer.parseInt(st.nextToken());
+		n = Integer.parseInt(st.nextToken());
+		map = new boolean[n+2][m+2];
+		que = new LinkedList<>();
+		for(int i = 1 ; i <= n ; i++) {
+			st = new StringTokenizer(br.readLine());
+			for(int j = 1 ; j <= m ; j++) {
+				switch(Integer.parseInt(st.nextToken())) {
+					case 0 :
+						map[i][j] = true;
+						break;
+					case 1 :						
+						que.add(new int[] {i,j});				
+				}
+			}
 		}
-		System.out.println(Math.min(count2, count5));
+		while(!que.isEmpty()) {
+			Queue<int[]> temp = new LinkedList<>(que);
+			que.clear();
+			dayThrou(temp);
+			System.out.println(day);
+			for(boolean[] b : map) {
+				System.out.println(Arrays.toString(b));
+			}
+			for(int[] arr : que) {
+				System.out.println(Arrays.toString(arr));
+			}
+		}
+		if(isExistZero()) {System.out.println(-1); return;}
+		else System.out.println(day);
 		
+	}	
+	
+	public static void dayThrou(Queue<int[]> temp) {
+		for(int[] arr : temp) {
+			for (int i = 0 ; i < 4 ; i++) {
+				if(map[arr[0]+dr[i]][arr[1]+dc[i]] == true) {
+					que.add(new int[] {arr[0]+dr[i], arr[1]+dc[i]});
+					map[arr[0]+dr[i]][arr[1]+dc[i]] = false;
+				}
+			}		
+		}
+		if(!que.isEmpty()) day++;
 	}
 	
-	public static int getCount2 (int num) {
-		int answer = 0;
-		while (num%2 ==0) {
-			answer++;
-			num /= 2;
+	public static boolean isExistZero() {
+		for(int i = 0 ; i < n ; i++) {
+			for (int j = 0 ; j < m ; j++ ) {
+				if(map[i][j] == true) return true;
+			}
 		}
-		return answer;
+		return false;
 	}
-	
-	public static int getCount5 (int num) {
-		int answer = 0;
-		while (num%5 ==0) {
-			answer++;
-			num /= 5;
-		}
-		return answer;
-	}
-
+		
 }
+
