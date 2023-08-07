@@ -34,7 +34,7 @@ public class Ex01_Stream {
 
 	public static void main(String[] args) {
 		//byte (-128~127) 정수를 저장하는 타입
-		byte[] inSrc = {0,1,2,3,4,5,6,7,8,9};
+		byte[] inSrc = {-1,0,1,2,3,4,5,6,7,8,9};
 		byte[] outSrc = null; // 현재 메모리를 갖고 있지않아요..
 		
 		//입출력 스트림을 통해 memory에 접근하여 read, write를 해보자
