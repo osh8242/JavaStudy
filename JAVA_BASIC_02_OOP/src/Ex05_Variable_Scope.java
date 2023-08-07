@@ -87,7 +87,6 @@ public class Ex05_Variable_Scope {
 //		System.out.println(vc2.cv);
 		
 		String str = "123";
-		str.sp
 //		
 		
 	}

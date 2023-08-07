@@ -235,8 +235,8 @@ public class Ex03_DataType {
 		//int result2 = data4 + number; 오류남.. double형 + int형 은 double형
 		//해결방법은?
 		//1. int result2 = (int)data4 + number; // 큰 것은 작은 것으로 강제형변환
-		2. double result2 = data4 + number; // 담는 그릇을 더 큰 형식으로 변환
-		System.out.println(result2);
+		//2. double result2 = data4 + number; // 담는 그릇을 더 큰 형식으로 변환
+		//System.out.println(result2);
 		
 		//Quiz 3)
 		int number2 = 100;
@@ -253,7 +253,7 @@ public class Ex03_DataType {
 		byte b3 = (byte)data5; // 명시적(강제적) 형변환 : Casting
 		
 		byte b4 = 20;
-		int data5 = b4; // 컴파일러가 내부적으로 암시적 형변환
+		//data5 = b4; // 컴파일러가 내부적으로 암시적 형변환
 		int data6 = (int)b4; // 강제적 형변환
 		
 		

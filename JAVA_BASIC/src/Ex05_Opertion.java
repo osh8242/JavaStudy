@@ -1,4 +1,3 @@
-OF
 public class Ex05_Opertion {
 
 	public static void main(String[] args) {

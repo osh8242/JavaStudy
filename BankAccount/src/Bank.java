@@ -36,7 +36,7 @@ public class Bank {
 		return temp;
 	}
 	
-	public ArrayList<Account> getAccounts() {
+	public List<Account> getAccounts() {
 		System.out.println("= 전체 계좌 목록 =");
 		for (Account acc : accounts) {
 			System.out.println(acc.toString());

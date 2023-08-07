@@ -168,7 +168,7 @@ public class Cinema {
                   else if(ruSureReservation()==1) {
                      reservation(this.choice);
                      continue;
-                  } else {ㅌ
+                  } else {
                      goToMenu();
                      continue;
                      }
