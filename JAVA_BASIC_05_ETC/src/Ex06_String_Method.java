@@ -107,8 +107,8 @@ public class Ex06_String_Method {
 		
 		//
 		//참고
-		String str6 = "a/b,c-d.f";
-		StringTokenizer sto = new StringTokenizer(str6, "/,-,.");
+		//String str6 = "a/b,c-d.f";
+		sto = new StringTokenizer(str6, "/,-,.");
 		while(sto.hasMoreElements()) {
 			System.out.println(sto.nextToken());
 		}

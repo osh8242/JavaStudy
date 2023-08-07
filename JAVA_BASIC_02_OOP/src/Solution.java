@@ -9,7 +9,7 @@ public class Solution {
 	public int[] solution(int[] numlist, int n) {
         int[] answer = {};
         int[] distance = new int[numlist.length];
-        for (int i = 0; i<distance.length; i+) {
+        for (int i = 0; i<distance.length; i++) {
         	distance[i] = numlist[i]-n;
         }        
         int index = 0;

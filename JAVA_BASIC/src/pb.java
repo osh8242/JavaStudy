@@ -9,7 +9,6 @@ public class pb {
                 if ( Arrays.toString(arr)=="[2, 3, 1]") {
                 	answer++;
                 }
-                ingredient = [];
             }
             
         }

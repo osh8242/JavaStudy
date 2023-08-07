@@ -79,7 +79,6 @@ public class Ex11_Statement_Quiz {
 		int residue = (int)balance%3;
 		switch (residue) {
 			case 0 : {
-				for (int i = 0 ; i < )
 				return balance_str;
 			}
 			case 1 :

@@ -136,15 +136,15 @@ public class Ex02_Inheritance_Composition {
 		Circle c2 = new Circle(100, new Point(10,20));
 		
 		Triangle tri = new Triangle();
-		tri.trianglePoint();
+		//tri.trianglePoint();
 		
 		Triangle tri2 = new Triangle(new Point(1,2), new Point(3,4),new Point(5,6));
-		tri2.trianglePoint();
+		//tri2.trianglePoint();
 		
 		
 		Point[] parray = new Point[] {new Point(11,22),new Point(33,44),new Point(55,66)};
-		Triangle2 tri3 = new Triangle2(parray);
-		tri3.trianglePoint();
+		Triangle tri3 = new Triangle();
+		//tri3.trianglePoint();
 
 	}
 

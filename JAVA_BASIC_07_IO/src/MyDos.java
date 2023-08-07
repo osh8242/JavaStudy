@@ -18,7 +18,7 @@ public class MyDos {
 		System.out.println("명령어 목록을 보려면 '?'를 입력하세요\n");
 
 		Scanner sc = new Scanner(System.in);
-n
+
 		String[] input = null;
 
 		while (true) {
