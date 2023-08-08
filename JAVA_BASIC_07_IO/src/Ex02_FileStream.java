@@ -27,13 +27,13 @@ I/O 자원은 개발자 직접적으로 자원에 대한 해제작업을 해야�
 public class Ex02_FileStream {
 
 	public static void main(String[] args) {
-		FileInputStream fs = null;
+		FileInputStream fis = null;
 		FileOutputStream fos = null;
 		
 		String path = "D:\\temp\\a.txt";
 		
 		try {
-			fs = new FileInputStream(path);
+			fis = new FileInputStream(path);
 			fos = new FileOutputStream("D:\\temp\\new.txt",true);
 			// 현재 temp 폴더 안에 new.txt 파일이 없어요
 			/*
@@ -41,12 +41,11 @@ public class Ex02_FileStream {
 			 1. write 파일이 존재하지 않으면 >> 자동 파일 생성 (create 기능)
 			 2. fos = new FileOutputStream("D:\\temp\\new.txt",false);
 			 	false 옵션을 넣어주면 덮어쓰기한다
-			 	true 옵션이면 기존 파일 내용에 추가하여 작성한다(default)
-			 
+			 	true 옵션이면 기존 파일 내용에 추가하여 작성한다(default)			 
 			 */
 			
 			int data = 0 ;
-			while ((data = fs.read()) != -1) { //D:\\temp\\a.txt 파일 읽어들이기
+			while ((data = fis.read()) != -1) { //D:\\temp\\a.txt 파일 읽어들이기
 //				System.out.println("정수 : " + data + " : " + (char)data);
 				fos.write(data);
 				fos.write('\n');
@@ -61,7 +60,7 @@ public class Ex02_FileStream {
 			//because I/O 자원들은 가비지 컬렉터가 관리하지 않기 때문이다
 			//close() 명시적으로 소멸자 호출
 			try {
-				fs.close();
+				fis.close();
 				fos.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
