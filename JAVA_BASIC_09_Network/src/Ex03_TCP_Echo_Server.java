@@ -13,9 +13,8 @@ public class Ex03_TCP_Echo_Server {
             Client 서버로 write 데이터를 서버가 받아서 그대로 다시 Client 전송
             server : read, write
             client : read, write
-
             socket으로부터 input, ouput stream을 얻어야하는구나
-         */
+        */
 
         //client가 보낸 내용 읽기
         InputStream in = socket.getInputStream();
